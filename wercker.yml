@@ -8,8 +8,8 @@ build:
     - script:
         name: installation
         code: |
-          go install github.com/odeke-em/goht
+          go install
     - script:
         name: installation and test
         code: |
-          go test github.com/odeke-em/goht
+          go test
