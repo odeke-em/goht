@@ -8,6 +8,8 @@ build:
     - script:
         name: installation
         code: |
+          find . -maxdepth 1 -type f
+          pwd
           go install
     - script:
         name: installation and test
