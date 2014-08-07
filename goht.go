@@ -55,8 +55,8 @@ func (t *Trie) accessOp (h int, isPop bool) (retr interface{}) {
         } else if powerCount <= 0 {
             break
         } else {
-            trav = trav.children[h % 10]
-            h /= 10
+            trav = trav.children[h % Base]
+            h /= Base
             powerCount--
         }
     }
