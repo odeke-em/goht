@@ -74,7 +74,7 @@ func (t *Trie) accessOp (h int, isPop bool) (retr interface{}) {
 
 func (t *Trie) Pop(h int) (retr interface{}) {
     retr = nil
-    if t == nil || h < 0 {
+    if t == nil {
         return 
     } else {
         retr = t.accessOp(h, true)
@@ -85,7 +85,7 @@ func (t *Trie) Pop(h int) (retr interface{}) {
 
 func (t *Trie) Get(h int) (retr interface{}) {
     retr = nil
-    if t == nil || h < 0 {
+    if t == nil {
         return 
     } else {
         retr = t.accessOp(h, false)
