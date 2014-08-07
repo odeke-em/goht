@@ -1,0 +1,15 @@
+box: wercker/golang
+build:
+  steps:
+    - script:
+        name: echo golang information
+        code: |
+          echo "Version information: $(go version)"
+    - script:
+        name: installation
+        code: |
+          go install github.com/odeke-em/goht
+    - script:
+        name: installation and test
+        code: |
+          go test github.com/odeke-em/goht
