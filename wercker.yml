@@ -10,8 +10,8 @@ build:
         code: |
           find . -maxdepth 1 -type f
           pwd
-          go install
+          go install goht
     - script:
         name: installation and test
         code: |
-          go test
+          go test goht
