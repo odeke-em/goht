@@ -5,13 +5,13 @@ build:
         name: echo golang information
         code: |
           echo "Version information: $(go version)"
-    - script:
-        name: installation
-        code: |
-          find . -maxdepth 1 -type f
-          pwd
-          go install goht
-    - script:
-        name: installation and test
-        code: |
-          go test goht
+   # - script:
+   #     name: installation
+   #     code: |
+   #       find . -maxdepth 1 -type f
+   #       pwd
+   #       go install goht
+   # - script:
+   #     name: installation and test
+   #     code: |
+   #       go test goht
