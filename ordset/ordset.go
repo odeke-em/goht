@@ -1,3 +1,13 @@
+/*
+    Author: Emmanuel Odeke <odeke@ualberta.ca>
+    Description: Data structure that allows for set operations:
+        put, pop, get
+    however in O(1) time.
+    The caveat however is that extra memory is used since under the
+    hood, it consists of a doubly linked list as well as a hashmap.
+    The hashmap is a item-hash to doubly linked list node map.
+*/
+
 package ordset
 
 import (
