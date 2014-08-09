@@ -22,6 +22,32 @@ func (d *DNode) Init(v interface{}) *DNode {
     return d
 }
 
+func (d *DNode) GetValue() interface{} {
+    return d.Value
+}
+
+func (d *DNode) SetValue(v interface{}) (vacated interface{}) {
+    vacated = d.Value
+    d.Value = v
+    return
+}
+
+func (d *DNode) GetPrev() *DNode {
+    return d.prev
+}
+
+func (d *DNode) GetNext() *DNode {
+    return d.next
+}
+
+func (d *DNode) SetPrev(p *DNode) {
+    d.prev = p
+}
+
+func (d *DNode) SetNext(n *DNode) {
+    d.next = n
+}
+
 func (d *DNode) Prepend(v interface{}) *DNode {
     fresh := New(v) 
     if d.prev != nil {
