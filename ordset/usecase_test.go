@@ -1,14 +1,17 @@
 package ordset
 
 import (
+    "fmt"
     "testing"
 )
 
 const (
     Stocks = 8727
+    Insurer = 45
     Software = 21828
     Logistics = 100
     Marketing = 929
+    TourGuide = 99
     Hospitality = 2346
     SafariBookings = 2938
 )
@@ -20,7 +23,7 @@ func TestUsage(t *testing.T) {
         Logistics: "Emmanuel Odeke", Stocks: "GoldmanSachs",
         Software: "Piatzi Analytics", SafariBookings: "Kijongo Bay Hospitality",
         Hospitality: "Kijongo Bay Resort", Marketing: "Wild Wild West(www) Inc",
-        TourGuide: "Elaete Tours", InsuranceProvider: "ITriv Insurance Company",
+        TourGuide: "Elaete Tours", Insurer: "ITriv Insurance Company",
     }
 
     for k, v := range contractors {
@@ -47,5 +50,12 @@ func TestUsage(t *testing.T) {
         t.Errorf("Logistics member got removed yet is reported as found")
     } else if dRetr != nil {
         t.Errorf("Value for Logistics got removed yet is reported as found")
+    }
+
+    insurer, existance := od.Get(Insurer) 
+    if existance != true {
+        t.Errorf("Expected to have an insurer")
+    } else {
+        fmt.Printf("Insurer is: %s\n", insurer)
     }
 }
