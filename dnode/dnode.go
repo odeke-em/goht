@@ -9,6 +9,10 @@ type DNode struct {
     Value interface{}
 }
 
+const (
+    MaxItPerLine=20
+)
+
 func New(v interface{}) *DNode {
     return new(DNode).Init(v)
 }
@@ -73,6 +77,14 @@ func (d *DNode) Append(v interface{}) *DNode {
     d.size++
 
     return fresh
+}
+
+func (d *DNode) HasNext() (b bool) {
+    b = false
+    if d.next != nil {
+        b = true
+    }
+    return
 }
 
 func (d *DNode) Shift() *DNode {

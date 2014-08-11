@@ -59,5 +59,4 @@ func TestRemove(t *testing.T) {
             t.Errorf("Should have been vacated")
         }
     }
-
 }
