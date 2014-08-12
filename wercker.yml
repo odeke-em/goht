@@ -1,25 +1,25 @@
 box: wercker/golang
 build:
-	steps:
-	- script:
-		name: echo golang information
-		code: |
-			echo "Version information: $(go version)"
-	- script:
-		name: installation
-		code: |
-			export GOPATH=$HOME/go:$GOPATH
-			export PROJPATH=$GOPATH/src/github.com/odeke-em
-			mkdir -p $PROJPATH
-			START_DIR=$(pwd)
-			git clone git@github.com:odeke-em/goht
-			cd $PROJPATH/goht
-			for i in $(find .depth 1 -type d -regex "./[^.]*")
-			do
-				echo "Going into $i"
-				cd $i
-				go install
-				go test
-				cd ../
-			done
-			cd $START_DIR
+    steps:
+    - script:
+        name: echo golang information
+        code: |
+            echo "Version information: $(go version)"
+    - script:
+        name: installation
+        code: |
+            export GOPATH=$HOME/go:$GOPATH
+            export PROJPATH=$GOPATH/src/github.com/odeke-em
+            mkdir -p $PROJPATH
+            START_DIR=$(pwd)
+            git clone git@github.com:odeke-em/goht
+            cd $PROJPATH/goht
+            for i in $(find .depth 1 -type d -regex "./[^.]*")
+            do
+                echo "Going into $i"
+                cd $i
+                go install
+                go test
+                cd ../
+            done
+            cd $START_DIR
