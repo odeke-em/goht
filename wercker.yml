@@ -27,8 +27,9 @@ build:
             #     go test
             #     cd ../
             # done
-
+            ls .
             cd goht
+            ls .
             go install
             go test
             cd ../
