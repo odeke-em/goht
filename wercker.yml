@@ -21,28 +21,6 @@ build:
             
             cd goht # Main project dir
             echo $(find . -maxdepth 1 -type d -regex "./[^.]*")
-            for i in $(find . -maxdepth 1 -type d -regex "./[^.]*")
-            do
-                echo "Going into $i"
-                cd $i
-                go install
-                go test
-                cd ../
-            done
-
-            # cd goht
-            # go install
-            # go test
-            # cd ../
-
-            # cd dnode
-            # go install
-            # go test
-            # cd ../
-
-            # cd ordset
-            # go install
-            # go test
-            # cd ../
+            for i in $(find . -maxdepth 1 -type d -regex "./[^.]*");do  echo "Going into $i";cd $i;go install;go test;cd ../;done
 
             cd $START_DIR
