@@ -19,19 +19,20 @@ build:
             #     git clone git@github.com:odeke-em/goht
             # fi
             
-            # cd $PROJPATH/goht
-            # for i in $(find . -depth 1 -type d -regex "./[^.]*")
-            # do
-            #     echo "Going into $i"
-            #     cd $i
-            #     go install
-            #     go test
-            #     cd ../
-            # done
-            ls .
-            cd goht/goht
-            ls .
-            go install
-            go test
-            cd ../
+            cd goht
+            for i in $(find . -depth 1 -type d -regex "./[^.]*")
+            do
+                echo "Going into $i"
+                cd $i
+                go install
+                go test
+                cd ../
+            done
+            
+            # ls .
+            # cd goht/goht
+            # ls .
+            # go install
+            # go test
+            # cd ../
             cd $START_DIR
