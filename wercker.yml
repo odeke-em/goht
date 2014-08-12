@@ -19,22 +19,24 @@ build:
             #     git clone git@github.com:odeke-em/goht
             # fi
             
-            for i in $(find goht -maxdepth 1 -type d -regex "./[^.]*")
-            do
-                echo "Going into $i"
-                cd $i
-                go install
-                go test
-                cd ../
-            done
-            # cd ordset
-            # go install
-            # go test
-            # cd ../
+            find goht -maxdepth 1 -type d -regex "./[^.]*"
+            # for i in $(find goht -maxdepth 1 -type d -regex "./[^.]*")
+            # do
+            #     echo "Going into $i"
+            #     cd $i
+            #     go install
+            #     go test
+            #     cd ../
+            # done
 
-            # cd goht
-            # go install
-            # go test
-            # cd ../
+            cd ordset
+            go install
+            go test
+            cd ../
+
+            cd goht
+            go install
+            go test
+            cd ../
 
             cd $START_DIR
