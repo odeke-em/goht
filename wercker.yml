@@ -21,7 +21,7 @@ build:
             
             cd goht # Main project dir
             echo $(find . -maxdepth 1 -type d -regex "./[^.]*")
-            for i in $(find goht -maxdepth 1 -type d -regex "./[^.]*")
+            for i in $(find . -maxdepth 1 -type d -regex "./[^.]*")
             do
                 echo "Going into $i"
                 cd $i
