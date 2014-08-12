@@ -10,7 +10,7 @@ build:
         code: |
             export GOPATH=$HOME/go:$GOPATH
             export PROJPATH=$GOPATH/src/github.com/odeke-em
-            mkdir -p $PROJPATH
+            # mkdir -p $PROJPATH
             START_DIR=$(pwd)
 
             # if [ ! -d ./goht ]
@@ -18,7 +18,7 @@ build:
             #     git clone git@github.com:odeke-em/goht
             # fi
             
-            cd $PROJPATH/goht
+            # cd $PROJPATH/goht
             for i in $(find .depth 1 -type d -regex "./[^.]*")
             do
                 echo "Going into $i"
