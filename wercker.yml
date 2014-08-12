@@ -10,8 +10,10 @@ build:
         code: |
             export GOPATH=$HOME/go:$GOPATH
             export PROJPATH=$GOPATH/src/github.com/odeke-em
-            # mkdir -p $PROJPATH
+            mkdir -p $PROJPATH
             START_DIR=$(pwd)
+            cd $PROJPATH
+            git clone git@github.com:odeke-em/goht
 
             # if [ ! -d ./goht ]
             # then
@@ -28,7 +30,7 @@ build:
             #     cd ../
             # done
             ls .
-            cd goht
+            cd goht/goht
             ls .
             go install
             go test
