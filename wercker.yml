@@ -19,7 +19,7 @@ build:
             # fi
             
             # cd $PROJPATH/goht
-            for i in $(find .depth 1 -type d -regex "./[^.]*")
+            for i in $(find . -depth 1 -type d -regex "./[^.]*")
             do
                 echo "Going into $i"
                 cd $i
