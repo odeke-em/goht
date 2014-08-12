@@ -19,7 +19,7 @@ build:
             #     git clone git@github.com:odeke-em/goht
             # fi
             
-            echo $(find goht -maxdepth 1 -type d -regex "./[^.]*")
+            echo $(find . -maxdepth 2 -type d -regex "./[^.]*")
             # for i in $(find goht -maxdepth 1 -type d -regex "./[^.]*")
             # do
             #     echo "Going into $i"
