@@ -13,7 +13,7 @@ build:
             mkdir -p $PROJPATH
             START_DIR=$(pwd)
             cd $PROJPATH
-            git clone git@github.com:odeke-em/goht.git
+            git clone https://github.com/odeke-em/goht.git
 
             # if [ ! -d ./goht ]
             # then
