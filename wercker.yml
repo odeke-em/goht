@@ -29,12 +29,19 @@ build:
             #     cd ../
             # done
 
-            cd goht/goht
+            cd goht # Main project dir
+
+            cd goht
             go install
             go test
             cd ../
 
-            cd goht/ordset
+            cd dnode
+            go install
+            go test
+            cd ../
+
+            cd ordset
             go install
             go test
             cd ../
