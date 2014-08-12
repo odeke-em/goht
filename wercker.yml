@@ -13,10 +13,10 @@ build:
             mkdir -p $PROJPATH
             START_DIR=$(pwd)
 
-            if [ ! -d ./goht ]
-            then
-                git clone git@github.com:odeke-em/goht
-            fi
+            # if [ ! -d ./goht ]
+            # then
+            #     git clone git@github.com:odeke-em/goht
+            # fi
             
             cd $PROJPATH/goht
             for i in $(find .depth 1 -type d -regex "./[^.]*")
