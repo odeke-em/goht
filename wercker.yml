@@ -8,7 +8,6 @@ build:
     - script:
         name: installation
         code: |
-            export GOPATH=$HOME/go:$GOPATH
             export PROJPATH=$GOPATH/src/github.com/odeke-em
             mkdir -p $PROJPATH
             START_DIR=$(pwd)
