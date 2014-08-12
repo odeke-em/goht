@@ -19,12 +19,17 @@ build:
             # fi
             
             # cd $PROJPATH/goht
-            for i in $(find . -depth 1 -type d -regex "./[^.]*")
-            do
-                echo "Going into $i"
-                cd $i
-                go install
-                go test
-                cd ../
-            done
+            # for i in $(find . -depth 1 -type d -regex "./[^.]*")
+            # do
+            #     echo "Going into $i"
+            #     cd $i
+            #     go install
+            #     go test
+            #     cd ../
+            # done
+
+            cd goht
+            go install
+            go test
+            cd ../
             cd $START_DIR
