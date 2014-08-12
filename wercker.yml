@@ -12,7 +12,12 @@ build:
             export PROJPATH=$GOPATH/src/github.com/odeke-em
             mkdir -p $PROJPATH
             START_DIR=$(pwd)
-            git clone git@github.com:odeke-em/goht
+
+            if [ ! -d ./goht ]
+            then
+                git clone git@github.com:odeke-em/goht
+            fi
+            
             cd $PROJPATH/goht
             for i in $(find .depth 1 -type d -regex "./[^.]*")
             do
