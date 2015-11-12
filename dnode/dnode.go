@@ -3,96 +3,92 @@
 package dnode
 
 type DNode struct {
-    size uint
-    prev *DNode
-    next *DNode
-    Value interface{}
+	size  uint
+	prev  *DNode
+	next  *DNode
+	Value interface{}
 }
 
 const (
-    MaxItPerLine=20
+	MaxItPerLine = 20
 )
 
 func New(v interface{}) *DNode {
-    return new(DNode).Init(v)
+	return new(DNode).Init(v)
 }
 
 func (d *DNode) Init(v interface{}) *DNode {
-    d.size = 1
-    d.prev = nil   
-    d.next = nil
-    d.Value = v
+	d.size = 1
+	d.prev = nil
+	d.next = nil
+	d.Value = v
 
-    return d
+	return d
 }
 
 func (d *DNode) GetValue() interface{} {
-    return d.Value
+	return d.Value
 }
 
 func (d *DNode) SetValue(v interface{}) (vacated interface{}) {
-    vacated = d.Value
-    d.Value = v
-    return
+	vacated = d.Value
+	d.Value = v
+	return
 }
 
 func (d *DNode) GetPrev() *DNode {
-    return d.prev
+	return d.prev
 }
 
 func (d *DNode) GetNext() *DNode {
-    return d.next
+	return d.next
 }
 
 func (d *DNode) SetPrev(p *DNode) {
-    d.prev = p
+	d.prev = p
 }
 
 func (d *DNode) SetNext(n *DNode) {
-    d.next = n
+	d.next = n
 }
 
 func (d *DNode) Prepend(v interface{}) *DNode {
-    fresh := New(v) 
-    if d.prev != nil {
-        fresh.prev = d.prev 
-    }
+	fresh := New(v)
+	if d.prev != nil {
+		fresh.prev = d.prev
+	}
 
-    d.prev = fresh
-    fresh.next = d
+	d.prev = fresh
+	fresh.next = d
 
-    d.size++
+	d.size++
 
-    return fresh
+	return fresh
 }
 
 func (d *DNode) Append(v interface{}) *DNode {
-    fresh := New(v) 
-    if d.next != nil {
-        fresh.next = d.next
-    }
+	fresh := New(v)
+	if d.next != nil {
+		fresh.next = d.next
+	}
 
-    d.next = fresh
-    fresh.prev = d
-    d.size++
+	d.next = fresh
+	fresh.prev = d
+	d.size++
 
-    return fresh
+	return fresh
 }
 
 func (d *DNode) HasNext() (b bool) {
-    b = false
-    if d.next != nil {
-        b = true
-    }
-    return
+	return d != nil && d.next != nil
 }
 
 func (d *DNode) Shift() *DNode {
-    d = d.next
-    return d
+	d = d.next
+	return d
 }
 
 func (d *DNode) UnShift() *DNode {
-    d = d.prev
-    return d
+	d = d.prev
+	return d
 }
